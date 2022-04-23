@@ -1,11 +1,14 @@
 #!/usr/bin/python
+import os
 import json
 import urllib.request
 from scripts.models.concert import Concert
 from scripts.models.concert_manager import ConcertManager
 from scripts.views.concert_view import ConcertView
 
-url = 'https://sheets.googleapis.com/v4/spreadsheets/1DvKwUS4tHe2646Fu8e1ut5JCUD-nd3AKn3TfUTI7EuI/values/Sheet1?alt=json'
+API_KEY = os.environ('API_KEY')
+
+url = 'https://sheets.googleapis.com/v4/spreadsheets/1DvKwUS4tHe2646Fu8e1ut5JCUD-nd3AKn3TfUTI7EuI/values/Sheet1?alt=json&key=' + API_KEY
 response = urllib.request.urlopen(url)
 data = json.loads(response.read())
 
@@ -22,7 +25,7 @@ for row in rows:
             named_row[col_name] = ''
     concert = Concert(named_row)
     concert_manager.concerts.append(concert)
-    
+
 next_concert = concert_manager.get_next_concert()
 with open('./_includes/next-concert.html', 'w') as f: 
     f.write(ConcertView(next_concert).html)
@@ -38,7 +41,7 @@ with open('./_includes/past-concerts.html', 'w') as f:
     f.write('\n'.join(page_elements))
 
 
-url = 'https://sheets.googleapis.com/v4/spreadsheets/1whVYOsZxYCN6PssYtBWrc60hyUfq_3DzIJQPQJmhGOg/values/Sheet1?alt=json'
+url = 'https://sheets.googleapis.com/v4/spreadsheets/1whVYOsZxYCN6PssYtBWrc60hyUfq_3DzIJQPQJmhGOg/values/Sheet1?alt=json&key=' + API_KEY
 response = urllib.request.urlopen(url)
 data = json.loads(response.read())
 
