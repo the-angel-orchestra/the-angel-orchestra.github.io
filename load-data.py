@@ -6,7 +6,7 @@ from scripts.models.concert import Concert
 from scripts.models.concert_manager import ConcertManager
 from scripts.views.concert_view import ConcertView
 
-API_KEY = os.environ('API_KEY')
+API_KEY = os.environ['API_KEY']
 
 url = 'https://sheets.googleapis.com/v4/spreadsheets/1DvKwUS4tHe2646Fu8e1ut5JCUD-nd3AKn3TfUTI7EuI/values/Sheet1?alt=json&key=' + API_KEY
 response = urllib.request.urlopen(url)
