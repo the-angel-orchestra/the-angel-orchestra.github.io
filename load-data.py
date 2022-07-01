@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import json
+import yaml
 import urllib.request
 from scripts.models.concert import Concert
 from scripts.models.concert_manager import ConcertManager
@@ -29,6 +30,22 @@ for row in rows:
 next_concert = concert_manager.get_next_concert()
 with open('./_includes/next-concert.html', 'w') as f: 
     f.write(ConcertView(next_concert).html)
+
+minute, hour, day, month = next_concert.date_obj.minute, next_concert.date_obj.hour, next_concert.date_obj.day, next_concert.date_obj.month
+
+cron_str = f'{minute + 1} {hour + 1} {day} {month} *'
+
+with open('./.github/workflows/main.yml') as f:
+    current_yml_as_list = f.readlines()
+
+future_yml_as_list = current_yml_as_list.copy()
+
+for idx, line in enumerate(current_yml_as_list):
+    if 'schedule' in line:
+        future_yml_as_list[idx + 1] = f'    - cron: "{cron_str}"\n'
+
+with open('./.github/workflows/main.yml', 'w') as f:
+    f.write(''.join(future_yml_as_list))
 
 future_concerts = concert_manager.get_future_concerts()
 with open('./_includes/future-concerts.html', 'w') as f: 
