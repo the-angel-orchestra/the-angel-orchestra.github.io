@@ -26,6 +26,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          github_token: ${{ secrets.WORKFLOW_PAT }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -45,5 +47,4 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          repo_token: ${{ secrets.WORKFLOW_PAT }}
           branch: main 
