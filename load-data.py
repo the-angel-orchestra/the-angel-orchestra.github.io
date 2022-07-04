@@ -70,7 +70,7 @@ page_elements = []
 for row in data['values'][1:]:
     url = row[1]
     name = row[0]
-    html = "<li><a href='{}'>{}</a></li>\n".format(url, name)
+    html = '<li><a href="{}">{}</a></li>\n'.format(url, name)
     page_elements.append(html)
 
 with open('./_includes/imslp.html', 'w') as f: 
