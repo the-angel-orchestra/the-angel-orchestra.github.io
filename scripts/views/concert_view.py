@@ -35,24 +35,16 @@ class ConcertView():
         return html
 
     def future_html(self):
-        print('building html...')
         html = "<h3>" + self.concert.title + ": "
         html += self.concert.date_str + "</h3>\n"
         if not self.concert.is_empty_string(self.concert.description):
             html += self.concert.description + "\n"
         html += self.handle_solist()
         html += self.handle_programme()
-        print(self.concert.start_time)
         if self.concert.start_time != 'n/a':
-            print('is not na')
-            print(html)
             html += "<p>Concert starts at " + self.concert.start_time
-            print(self.concert.ticket_info)
             html += u". " + self.concert.ticket_info + "</p>\n"
-            print(html)
             html += "<p>" + self.concert.venue + "</p>\n"
-            print(html)
-        print(html)
         return html
 
     def past_html(self):
