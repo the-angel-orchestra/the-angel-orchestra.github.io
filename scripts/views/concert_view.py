@@ -47,7 +47,7 @@ class ConcertView():
             print('is not na')
             print(html)
             html += "<p>Concert starts at " + self.concert.start_time
-            print(html)
+            print(self.concert.ticket_info)
             html += u". " + self.concert.ticket_info + "</p>\n"
             print(html)
             html += "<p>" + self.concert.venue + "</p>\n"
