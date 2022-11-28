@@ -45,9 +45,13 @@ class ConcertView():
         print(self.concert.start_time)
         if self.concert.start_time != 'n/a':
             print('is not na')
+            print(html)
             html += "<p>Concert starts at " + self.concert.start_time
+            print(html)
             html += u". " + self.concert.ticket_info + "</p>\n"
+            print(html)
             html += "<p>" + self.concert.venue + "</p>\n"
+            print(html)
         print(html)
         return html
 
