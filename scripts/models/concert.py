@@ -13,8 +13,6 @@ class Concert():
         self.venue = data['venue'] if not self.is_empty_string(data['venue']) else "Saint Silas Church on Risinghill Street, N1 9UL"
         self.start_time = data['start_time'] if not self.is_empty_string(data['start_time']) else "5pm"
         self.programme = self.get_programme()
-        self.full_price = data['full_price']
-        self.concession_price = data['concession_price']
         self.ticket_info = data['ticket_info']
 
     def is_empty_string(self, test_str):
