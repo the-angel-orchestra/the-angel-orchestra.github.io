@@ -58,20 +58,20 @@ with open('./_includes/past-concerts.html', 'w') as f:
     f.write('\n'.join(page_elements))
 
 
-url = 'https://sheets.googleapis.com/v4/spreadsheets/1whVYOsZxYCN6PssYtBWrc60hyUfq_3DzIJQPQJmhGOg/values/Sheet1?alt=json&key=' + API_KEY
-response = urllib.request.urlopen(url)
-data = json.loads(response.read())
+# url = 'https://sheets.googleapis.com/v4/spreadsheets/1whVYOsZxYCN6PssYtBWrc60hyUfq_3DzIJQPQJmhGOg/values/Sheet1?alt=json&key=' + API_KEY
+# response = urllib.request.urlopen(url)
+# data = json.loads(response.read())
 
-rehearsals_text = data['values'][1][2]
-with open('./_includes/rehearsals.html', 'w') as f: 
-    f.write("<p>" + rehearsals_text + "</p>")
+# rehearsals_text = data['values'][1][2]
+# with open('./_includes/rehearsals.html', 'w') as f: 
+#     f.write("<p>" + rehearsals_text + "</p>")
 
-page_elements = []
-for row in data['values'][1:]:
-    url = row[1]
-    name = row[0]
-    html = '<li><a href="{}">{}</a></li>\n'.format(url, name)
-    page_elements.append(html)
+# page_elements = []
+# for row in data['values'][1:]:
+#     url = row[1]
+#     name = row[0]
+#     html = '<li><a href="{}">{}</a></li>\n'.format(url, name)
+#     page_elements.append(html)
 
-with open('./_includes/imslp.html', 'w') as f: 
-    f.write('\n'.join(page_elements))
+# with open('./_includes/imslp.html', 'w') as f: 
+#     f.write('\n'.join(page_elements))
