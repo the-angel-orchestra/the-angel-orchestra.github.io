@@ -4,7 +4,7 @@
 
 Add details to [the spreadsheet](https://docs.google.com/spreadsheets/d/1DvKwUS4tHe2646Fu8e1ut5JCUD-nd3AKn3TfUTI7EuI/edit?usp=sharing):
 
-- date should be formatted as `day month (as a word) year` for standard concerts or `day and day month year` for weekend workshops
+- date should be formatted as `day month year` (with day as a number without "th" etc and month as a word) for standard concerts or `day and day month year` for weekend workshops
 - title and optional description, which can render html and is useful for providing details of weekend workshops and more complex scenarios e.g. when there is more than one soloist to mention
 - for only one soloist, the subsequent columns can be used to display their name, an optional url to link out to from their name, and an optional description of their role (e.g. Soprano)
 - programme details go in next, one piece per column
