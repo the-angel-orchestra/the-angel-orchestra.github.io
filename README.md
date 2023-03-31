@@ -30,3 +30,5 @@ Most terms, we provide two categories of links to sheet music:
 
 1. Parts that can be found on ISMLP. To add/edit these, log in to GitHub and navigate to [the Code tab](https://github.com/the-angel-orchestra/the-angel-orchestra.github.io) of the website repository, click on `_includes` and then `imslp.html`, then the pen logo to edit. Search IMSLP for the right urls then each piece needs to be added as a "list item" (or "li"), in the following format: `<li><a href="IMSLP_URL_HERE">PIECE_NAME_HERE</a></li>`, e.g. `<li><a href="https://imslp.org/wiki/Symphony_No.9%2C_Op.125_(Beethoven%2C_Ludwig_van)">Beethoven 9</a></li>`
 2. Bowed parts - documentation to do!
+
+Once these links are up-to-date, click on the green `Commit changes` button at the bottom of the screen. This will launch the process of updating the website, which usually takes a couple of minutes to complete.
