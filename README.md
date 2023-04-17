@@ -4,7 +4,11 @@
 
 Add details to [the spreadsheet](https://docs.google.com/spreadsheets/d/1DvKwUS4tHe2646Fu8e1ut5JCUD-nd3AKn3TfUTI7EuI/edit?usp=sharing):
 
-- date should be formatted as `day month year` (with day as a number without "th" etc and month as a word) for standard concerts or `day and day month year` for weekend workshops
+- the date for a regular concert should be formatted as `day month year`: 
+    - day as a number, without "th" etc 
+    - month as a word
+    - year as `yyyy` 
+- for weekend workshops the date format should be as above but you can clarify that it is `day and day month year` (for both Saturday and Sunday)
 - title and optional description, which can render html and is useful for providing details of weekend workshops and more complex scenarios e.g. when there is more than one soloist to mention
 - for only one soloist, the subsequent columns can be used to display their name, an optional url to link out to from their name, and an optional description of their role (e.g. Soprano)
 - programme details go in next, one piece per column
@@ -34,7 +38,7 @@ Most terms, we provide two categories of links to sheet music:
 
 2. Bowed parts: 
     - Navigate to `assets/images` and from the `Add file` dropdown click on `Upload files`. You will have received pdf copies of the bowed parts by email from Peter - drag and drop these into the window and then click on the green button to `Commit changes`. 
-    - Open `_includes/bowed-parts.html` and click the pen icon to edit. Add new pieces using html along these lines, taking care to ensure that the filepath for the pdf is correct:
+    - Open `_includes/bowed-parts.html` and click the pen icon to edit. Add new pieces using html along these lines, taking care to ensure that the pdf filepaths are correct:
         ```
         <p>Elgar</p>
         <ul>
