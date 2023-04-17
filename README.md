@@ -28,7 +28,23 @@ You should now be looking at the text that appears in the middle of the [reheasa
 
 Most terms, we provide two categories of links to sheet music:
 
-1. Parts that can be found on ISMLP. To add/edit these, log in to GitHub and navigate to [the Code tab](https://github.com/the-angel-orchestra/the-angel-orchestra.github.io) of the website repository, click on `_includes` and then `imslp.html`, then the pen logo to edit. Search IMSLP for the right urls then each piece needs to be added as a "list item" (or "li"), in the following format: `<li><a href="IMSLP_URL_HERE">PIECE_NAME_HERE</a></li>`, e.g. `<li><a href="https://imslp.org/wiki/Symphony_No.9%2C_Op.125_(Beethoven%2C_Ludwig_van)">Beethoven 9</a></li>`
-2. Bowed parts - documentation to do!
+1. Parts that can be found on ISMLP. 
+    - To add/edit these, log in to GitHub and navigate to [the Code tab](https://github.com/the-angel-orchestra/the-angel-orchestra.github.io) of the website repository, click on `_includes` and then `imslp.html`, then the pen logo to edit. Search IMSLP for the right urls then each piece needs to be added as a "list item" (or "li"), in the following format: `<li><a href="IMSLP_URL_HERE">PIECE_NAME_HERE</a></li>`, e.g. `<li><a href="https://imslp.org/wiki/Symphony_No.9%2C_Op.125_(Beethoven%2C_Ludwig_van)">Beethoven 9</a></li>`
+    - Once these links are up-to-date, click on the green `Commit changes` button at the bottom of the screen. This will launch the process of updating the website, which usually takes a couple of minutes to complete.
 
-Once these links are up-to-date, click on the green `Commit changes` button at the bottom of the screen. This will launch the process of updating the website, which usually takes a couple of minutes to complete.
+2. Bowed parts: 
+    - Navigate to `assets/images` and from the `Add file` dropdown click on `Upload files`. You will have received pdf copies of the bowed parts by email from Peter - drag and drop these into the window and then click on the green button to `Commit changes`. 
+    - Open `_includes/bowed-parts.html` and click the pen icon to edit. Add new pieces using html along these lines, taking care to ensure that the filepath for the pdf is correct:
+        ```
+        <p>Elgar</p>
+        <ul>
+            <li><a href="/assets/images/Elgar Froissart vln1.pdf">Violin 1</a></li>
+            <li><a href="/assets/images/Elgar Froissart vln2.pdf">Violin 2</a></li>
+            <li><a href="/assets/images/Elgar Froissart vla.pdf">Viola</a></li>
+            <li><a href="/assets/images/Elgar Froissart vcl cb.pdf">Cello</a></li>
+        </ul>
+        ```
+
+    - Click on the green button to `Commit changes` and wait for the page to build to check that all the links are working as expected. 
+    - Finally, delete any old pdfs that are no longer needed by navigating back to `assets/images` and clicking on each out-of-date file, then the bin icon above the top-right corner of the pdf viewing window. Each deletion needs to be `commit`ted individually. 
+
